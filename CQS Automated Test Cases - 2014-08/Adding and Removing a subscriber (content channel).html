@@ -1,0 +1,277 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head profile="http://selenium-ide.openqa.org/profiles/test-case">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>New Test</title>
+</head>
+<body>
+<table cellpadding="1" cellspacing="1" border="1">
+<thead>
+<tr><td rowspan="1" colspan="3">New Test</td></tr>
+</thead><tbody>
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head profile="http://selenium-ide.openqa.org/profiles/test-case">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link rel="selenium.base" href="http://qa-cqs-11/" />
+<title>Creating a provider without first name</title>
+</head>
+<body>
+<table cellpadding="1" cellspacing="1" border="1">
+<thead>
+<tr><td rowspan="1" colspan="3">Creating a provider without first name</td></tr>
+</thead><tbody>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>css=div[key=&quot;configuration|/common/channel/channel_list.aspx&quot;]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=div[key=&quot;configuration|/common/channel/channel_list.aspx&quot;]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>//div[@id='list_list_body']/div/div</td>
+	<td></td>
+</tr>
+<tr>
+	<td>doubleClick</td>
+	<td>//div[@id='list_list_body']/div/div/span</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForPopUp</td>
+	<td></td>
+	<td>30000</td>
+</tr>
+<tr>
+	<td>selectPopUp</td>
+	<td></td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=main_box_provider_list_add_button</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=main_box_provider_list_add_button</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>//iframe</td>
+	<td></td>
+</tr>
+<tr>
+	<td>selectFrame</td>
+	<td>//iframe</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=npi_number</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=npi_number</td>
+	<td>0000000000</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=search_btn</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>//div[@id='list_list_body']/div/div/span/input</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=span:contains(&quot;0000000000&quot;)</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>//div[@class='line selected']/span/input</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=save_button</td>
+	<td></td>
+</tr>
+<tr>
+	<td>selectPopUp</td>
+	<td></td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementNotPresent</td>
+	<td>//iframe</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=save_button</td>
+	<td></td>
+</tr>
+<tr>
+	<td>selectWindow</td>
+	<td>null</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>//div[@id='list_list_body']/div/div</td>
+	<td></td>
+</tr>
+<tr>
+	<td>doubleClick</td>
+	<td>//div[@id='list_list_body']/div/div</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForPopUp</td>
+	<td></td>
+	<td>30000</td>
+</tr>
+<tr>
+	<td>selectPopUp</td>
+	<td></td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=main_box_provider_list_list_body</td>
+	<td></td>
+</tr>
+<tr>
+	<td>errorIfElementNotPresent</td>
+	<td>css=span:contains(&quot;0000000000&quot;)</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=main_box_provider_list_edit_button</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>//iframe</td>
+	<td></td>
+</tr>
+<tr>
+	<td>selectFrame</td>
+	<td>//iframe</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=npi_number</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=npi_number</td>
+	<td>0000000000</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=search_btn</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>//div[@id='list_list_body']/div/div/span/input</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=span:contains(&quot;0000000000&quot;)</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>//div[@class='line selected']/span/input</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=save_button</td>
+	<td></td>
+</tr>
+<tr>
+	<td>selectPopUp</td>
+	<td></td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementNotPresent</td>
+	<td>//iframe</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=save_button</td>
+	<td></td>
+</tr>
+<tr>
+	<td>selectWindow</td>
+	<td>null</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>//div[@id='list_list_body']/div/div</td>
+	<td></td>
+</tr>
+<tr>
+	<td>doubleClick</td>
+	<td>//div[@id='list_list_body']/div/div</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForPopUp</td>
+	<td></td>
+	<td>30000</td>
+</tr>
+<tr>
+	<td>selectPopUp</td>
+	<td></td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=main_box_provider_list_list_body</td>
+	<td></td>
+</tr>
+<tr>
+	<td>errorIfElementPresent</td>
+	<td>css=span:contains(&quot;0000000000&quot;)</td>
+	<td></td>
+</tr>
+<tr>
+	<td>close</td>
+	<td></td>
+	<td></td>
+</tr>
+<tr>
+	<td>selectWindow</td>
+	<td>null</td>
+	<td></td>
+</tr>
+</tbody></table>
+</body>
+</html>
+
+</tbody></table>
+</body>
+</html>

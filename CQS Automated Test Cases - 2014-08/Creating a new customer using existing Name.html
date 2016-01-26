@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head profile="http://selenium-ide.openqa.org/profiles/test-case">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link rel="selenium.base" href="http://qa-cqs-11/" />
+<title>Creating a new customer using existing Name</title>
+</head>
+<body>
+<table cellpadding="1" cellspacing="1" border="1">
+<thead>
+<tr><td rowspan="1" colspan="3">Creating a new customer using existing Name</td></tr>
+</thead><tbody>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>css=div[key=&quot;admin/customer/customer_list.aspx&quot;]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=div[key=&quot;admin/customer/customer_list.aspx&quot;]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=list_add_button</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=list_add_button</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForPopUp</td>
+	<td></td>
+	<td>30000</td>
+</tr>
+<tr>
+	<td>selectPopUp</td>
+	<td></td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=name</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=key</td>
+	<td>AZ</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=name</td>
+	<td>Andrew Li</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=description</td>
+	<td>None</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=contact_person</td>
+	<td>Andrew Li</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=contact_email</td>
+	<td>andrew@andrew.li</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=contact_phone</td>
+	<td>6788016065</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=contact_address_line1</td>
+	<td>1330 Compass Pointe Xing</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=contact_city</td>
+	<td>Alpharetta</td>
+</tr>
+<tr>
+	<td>select</td>
+	<td>id=contact_state</td>
+	<td>GA</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=contact_zip_code</td>
+	<td>30005</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=save_button</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=close_button</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=close_button</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=dontsave</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=dontsave</td>
+	<td></td>
+</tr>
+<tr>
+	<td>selectWindow</td>
+	<td>null</td>
+	<td></td>
+</tr>
+</tbody></table>
+</body>
+</html>

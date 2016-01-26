@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head profile="http://selenium-ide.openqa.org/profiles/test-case">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>New Test</title>
+</head>
+<body>
+<table cellpadding="1" cellspacing="1" border="1">
+<thead>
+<tr><td rowspan="1" colspan="3">New Test</td></tr>
+</thead><tbody>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>css=div[key=&quot;configuration|setup/dashboard/dashboard_list.aspx&quot;]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=div[key=&quot;configuration|setup/dashboard/dashboard_list.aspx&quot;]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=list_add_button</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=list_add_button</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForPopUp</td>
+	<td></td>
+	<td>30000</td>
+</tr>
+<tr>
+	<td>selectPopUp</td>
+	<td></td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=name</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=name</td>
+	<td>New View</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=title</td>
+	<td>none</td>
+</tr>
+<tr>
+	<td>select</td>
+	<td>css=select.attribution.col2</td>
+	<td>label=1 Appointment in 1 Year (Non-Unique)</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=save_button</td>
+	<td></td>
+</tr>
+<tr>
+	<td>selectWindow</td>
+	<td>null</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=list_add_button</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForPopUp</td>
+	<td></td>
+	<td>30000</td>
+</tr>
+<tr>
+	<td>selectPopUp</td>
+	<td></td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=name</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=name</td>
+	<td>New View</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=title</td>
+	<td>N/A</td>
+</tr>
+<tr>
+	<td>select</td>
+	<td>css=select.attribution.col2</td>
+	<td>label=1 Appointment in 1 Year (Non-Unique)</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=save_button</td>
+	<td></td>
+</tr>
+<tr>
+	<td>selectWindow</td>
+	<td>null</td>
+	<td></td>
+</tr>
+<tr>
+	<td>errorIfElementNotPresent</td>
+	<td>css=span:contains(&quot;New View&quot;)</td>
+	<td>No Dashboard view could be created to begin with, so it's impossible to test whether or not two Dashboard Views can have the same name.</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=span:contains(&quot;New View&quot;)</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=list_delete_button</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertConfirmation</td>
+	<td>Deleting a dashboard view will delete all associated data (e.g., selected measures, snapshots).<br />If this dashboard view is linked to a provider, that link will be deleted.<br />Are you sure you want to continue?</td>
+	<td></td>
+</tr>
+<tr>
+	<td>errorIfElementPresent</td>
+	<td>css=span:contains(&quot;New View&quot;)</td>
+	<td>Two Dashboard Views with same name were created.</td>
+</tr>
+</tbody></table>
+</body>
+</html>

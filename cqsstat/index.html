@@ -1,0 +1,842 @@
+<!DOCTYPE html>
+<html>
+<meta charset="utf-8">
+<head>
+<title> CQS Bug Stats </title>
+<style> /* set the CSS */
+ 
+svg { font: 12px Arial;}
+ 
+path { 
+  stroke: steelblue;
+  stroke-width: 2.5;
+  fill: none;
+}
+ 
+.axis path,
+.axis line {
+	fill: none;
+	stroke: grey;
+	stroke-width: 1;
+	shape-rendering: crispEdges;
+}
+
+div.tooltip {   
+  position: absolute;           
+  text-align: center;           
+  width: 120px;                  
+  height: 28px;                 
+  padding: 2px;             
+  font: 12px sans-serif;        
+  background: lightsteelblue;   
+  border: 0px;      
+  border-radius: 8px;           
+  pointer-events: none;         
+}
+ 
+</style>
+</head>
+<body>
+
+<h2 align="center"> CQS Bug Stats </h2>
+<button onclick="showGraph1()">Show Total Bugs</button>
+<button onclick="showGraph2()">Show Submitted Bugs</button>
+<button onclick="showBothGraphs()">Show Both Graphs</button>
+<p>----------------------------------------------------------------------------------------------------------------------------</p>
+<data src = "BugStats.csv"></data>
+<data src = "BugSubmissions.csv"></data>
+ 
+<!-- load the d3.js library -->	
+
+<script type="text/javascript" src="http://d3js.org/d3.v3.min.js"></script>
+ 
+<script>
+ 
+// Set the dimensions of the canvas / graph
+var	margin = {top: 30, right: 20, bottom: 30, left: 50},
+	width = 600 - margin.left - margin.right,
+	height = 600 - margin.top - margin.bottom;
+ 
+// Parse the date / time
+var	parseDate = d3.time.format("%x").parse;
+var formatTime = d3.time.format("%B %e, %Y");
+var ttt = "<br/>" + "Number of bugs: ";
+ 
+// Set the ranges
+var	x = d3.time.scale().range([0, width]);
+var	y = d3.scale.linear().range([height, 0]);
+ 
+// Define the axes
+var	xAxis = d3.svg.axis().scale(x)
+	.orient("bottom").ticks(3);
+ 
+var	yAxis = d3.svg.axis().scale(y)
+	.orient("left").ticks(25);
+
+
+function drawFirstGraph() {
+var dataBase = [
+	{
+		valueline:"", 
+		columnline:"Open P1",
+		dataVar:"",
+		colorcode:"",
+		yFunction54: function(d) {
+			return y(d[this.columnline]);
+		},
+		clickFunction: function(d) {
+			if (singleData) {
+				singleData = false;
+				svg.selectAll("g").remove();
+				d3.csv("BugStats.csv", drawGraph);
+			}
+			else {
+				singleData = true;
+				for (j = 0; j < dataBase.length; j++) {
+					if (j != 0) {
+						dataBase[j].dataVar.remove();
+					}
+				}
+			}
+		},
+		mouseoverFunction: function(d) {
+            div.transition()        
+                .duration(200)      
+                .style("opacity", .9);      
+            div.html(formatTime(d["Date"]) + ttt + 
+            d[dataBase[0].columnline])  
+                .style("left", (d3.event.pageX) + "px")     
+                .style("top", (d3.event.pageY - 28) + "px");    
+        },
+	},
+	{
+		valueline:"", 
+		columnline:"Open P2",
+		dataVar:"",
+		colorcode:"",
+		yFunction54: function(d) {
+			return y(d[this.columnline]);
+		},
+		clickFunction: function(d) {
+			if (singleData) {
+				singleData = false;
+				svg.selectAll("g").remove();
+				d3.csv("BugStats.csv", drawGraph);
+			}
+			else {
+				singleData = true;
+				for (j = 0; j < dataBase.length; j++) {
+					if (j != 1) {
+						dataBase[j].dataVar.remove();
+					}
+				}
+			}
+		},
+		mouseoverFunction: function(d) {      
+            div.transition()        
+                .duration(200)      
+                .style("opacity", .9);      
+            div.html(formatTime(d["Date"]) + ttt + 
+            d[dataBase[1].columnline])  
+                .style("left", (d3.event.pageX) + "px")     
+                .style("top", (d3.event.pageY - 28) + "px");    
+        }
+	},
+	{
+		valueline:"", 
+		columnline:"Open P3",
+		dataVar:"",
+		colorcode:"",
+		yFunction54: function(d) {
+			return y(d[this.columnline]);
+		},
+		clickFunction: function(d) {
+			if (singleData) {
+				singleData = false;
+				svg.selectAll("g").remove();
+				d3.csv("BugStats.csv", drawGraph);
+			}
+			else {
+				singleData = true;
+				for (j = 0; j < dataBase.length; j++) {
+					if (j != 2) {
+						dataBase[j].dataVar.remove();
+					}
+				}
+			}
+		},
+		mouseoverFunction: function(d) {      
+            div.transition()        
+                .duration(200)      
+                .style("opacity", .9);      
+            div.html(formatTime(d["Date"]) + ttt + 
+            d[dataBase[2].columnline])  
+                .style("left", (d3.event.pageX) + "px")     
+                .style("top", (d3.event.pageY - 28) + "px");    
+        }
+	},
+	{
+		valueline:"", 
+		columnline:"Open P4/P5",
+		dataVar:"",
+		colorcode:"",
+		yFunction54: function(d) {
+			return y(d[this.columnline]);
+		},
+		clickFunction: function(d) {
+			if (singleData) {
+				singleData = false;
+				svg.selectAll("g").remove();
+				d3.csv("BugStats.csv", drawGraph);
+			}
+			else {
+				singleData = true;
+				for (j = 0; j < dataBase.length; j++) {
+					if (j != 3) {
+						dataBase[j].dataVar.remove();
+					}
+				}
+			}
+		},
+		mouseoverFunction: function(d) {      
+            div.transition()        
+                .duration(200)      
+                .style("opacity", .9);      
+            div.html(formatTime(d["Date"]) + ttt + 
+            d[dataBase[3].columnline])  
+                .style("left", (d3.event.pageX) + "px")     
+                .style("top", (d3.event.pageY - 28) + "px");    
+        }
+	},
+	{
+		valueline:"", 
+		columnline:"All Open",
+		dataVar:"",
+		colorcode:"",
+		yFunction54: function(d) {
+			return y(d[this.columnline]);
+		},
+		clickFunction: function(d) {
+			if (singleData) {
+				singleData = false;
+				svg.selectAll("g").remove();
+				d3.csv("BugStats.csv", drawGraph);
+			}
+			else {
+				singleData = true;
+				for (j = 0; j < dataBase.length; j++) {
+					if (j != 4) {
+						dataBase[j].dataVar.remove();
+					}
+				}
+			}
+		},
+		mouseoverFunction: function(d) {      
+            div.transition()        
+                .duration(200)      
+                .style("opacity", .9);      
+            div.html(formatTime(d["Date"]) + ttt + 
+            d[dataBase[4].columnline])  
+                .style("left", (d3.event.pageX) + "px")     
+                .style("top", (d3.event.pageY - 28) + "px");    
+        }
+	},
+	{
+		valueline:"", 
+		columnline:"Resolved/ReadyToTest",
+		dataVar:"",
+		colorcode:"",
+		yFunction54: function(d) {
+			return y(d[this.columnline]);
+		},
+		clickFunction: function(d) {
+			if (singleData) {
+				singleData = false;
+				svg.selectAll("g").remove();
+				d3.csv("BugStats.csv", drawGraph);
+			}
+			else {
+				singleData = true;
+				for (j = 0; j < dataBase.length; j++) {
+					if (j != 5) {
+						dataBase[j].dataVar.remove();
+					}
+				}
+			}
+		},
+		mouseoverFunction: function(d) {      
+            div.transition()        
+                .duration(200)      
+                .style("opacity", .9);      
+            div.html(formatTime(d["Date"]) + ttt + 
+            d[dataBase[5].columnline])  
+                .style("left", (d3.event.pageX) + "px")     
+                .style("top", (d3.event.pageY - 28) + "px");    
+        }
+	},
+	{
+		valueline:"", 
+		columnline:"Closed",
+		dataVar:"",
+		colorcode:"",
+		yFunction54: function(d) {
+			return y(d[this.columnline]);
+		},
+		clickFunction: function(d) {
+			if (singleData) {
+				singleData = false;
+				svg.selectAll("g").remove();
+				d3.csv("BugStats.csv", drawGraph);
+			}
+			else {
+				singleData = true;
+				for (j = 0; j < dataBase.length; j++) {
+					if (j != 6) {
+						dataBase[j].dataVar.remove();
+					}
+				}
+			}
+		},
+		mouseoverFunction: function(d) {      
+            div.transition()        
+                .duration(200)      
+                .style("opacity", .9);      
+            div.html(formatTime(d["Date"]) + ttt + 
+            d[dataBase[6].columnline])  
+                .style("left", (d3.event.pageX) + "px")     
+                .style("top", (d3.event.pageY - 28) + "px");    
+        }
+	},
+	{
+		valueline:"", 
+		columnline:"Deferred",
+		dataVar:"",
+		colorcode:"",
+		yFunction54: function(d) {
+			return y(d[this.columnline]);
+		},
+		clickFunction: function(d) {
+			if (singleData) {
+				singleData = false;
+				svg.selectAll("g").remove();
+				d3.csv("BugStats.csv", drawGraph);
+			}
+			else {
+				singleData = true;
+				for (j = 0; j < dataBase.length; j++) {
+					if (j != 7) {
+						dataBase[j].dataVar.remove();
+					}
+				}
+			}
+		},
+		mouseoverFunction: function(d) {      
+            div.transition()        
+                .duration(200)      
+                .style("opacity", .9);      
+            div.html(formatTime(d["Date"]) + ttt + 
+            d[dataBase[7].columnline])  
+                .style("left", (d3.event.pageX) + "px")     
+                .style("top", (d3.event.pageY - 28) + "px");    
+        }
+	}
+];
+if (dataBase.length > 10) {
+	colorcodes = d3.scale.category20();
+	numberofcolors = 20;
+}
+else {
+	colorcodes = d3.scale.category10();
+	numberofcolors = 10;
+}
+for (var index55 = 0; index55 < dataBase.length; index55++) {
+	dataBase[index55].colorcode = colorcodes(index55%numberofcolors);
+}
+
+ 
+// Define the line
+for (var index54 = 0; index54 < dataBase.length; index54++) {
+	dataBase[index54].valueline = d3.svg.line()
+		.x(function(d) { return x(d["Date"]); })
+		.y(dataBase[index54].yFunction54);
+}
+    
+// Adds the svg canvas
+var	svg = d3.select("body")
+	.append("svg")
+		.attr("width", width + margin.left + margin.right + 170)
+		.attr("height", height + margin.top + margin.bottom)
+	.append("g")
+		.attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+
+var div = d3.select("body").append("div")   
+    .attr("class", "tooltip")               
+    .style("opacity", 0);
+ 
+var singleData = false;
+
+// Get the data
+drawGraph = function(error, data) {
+	data.forEach(function(d) {
+		d["Date"] = parseDate(d["Date"]);
+		for (i = 0; i < dataBase.length; i++) {
+			d[dataBase[i].columnline] = 
+				+d[dataBase[i].columnline];
+		}
+	});
+ 
+	// Scale the range of the data
+	x.domain(d3.extent(data, function(d) { return d["Date"]; }));
+	y.domain([0, d3.max(data, function(d) {
+		var maxim = d[dataBase[0].columnline];
+		for (var i = 1; i < dataBase.length; i++) {
+			if (d[dataBase[i].columnline] > maxim) {
+				maxim = d[dataBase[i].columnline];
+			}
+		}
+		return maxim; 
+	})]);
+	var dataVars = ["","","","","","","",""];
+// ------------------------------------------------------------------------------------------------------
+	for (var index53 = 0; index53 < dataBase.length; index53++) {
+		dataBase[index53].dataVar = svg.append("g")
+			.attr("id", ("data " + (1 + index53)));
+
+		dataBase[index53].dataVar.append("path")      // Add the valueline4 path.
+			.attr("class", "line")
+			.style("stroke", dataBase[index53].colorcode)
+			.attr("d", dataBase[index53].valueline(data));
+
+		dataBase[index53].dataVar.selectAll("dot")
+			.data(data)
+		.enter().append("circle")
+			.attr("r", 4.0)
+			.style("fill", dataBase[index53].colorcode)
+			.attr("cx", function(d) { return x(d["Date"]); })
+			.attr("cy", function(d) { 
+				return y(d[dataBase[index53].columnline]); 
+			})
+			.on("mouseover", dataBase[index53].mouseoverFunction)                  
+			.on("mouseout", function(d) {       
+				div.transition()        
+					.duration(500)      
+					.style("opacity", 0);   
+			});
+
+		dataBase[index53].dataVar.append("rect")
+			.attr("x", width + 150)
+			.attr("y", 25 * index53)
+			.attr("width", 18)
+			.attr("height", 18)
+			.style("fill", dataBase[index53].colorcode)
+			.on("click", dataBase[index53].clickFunction);
+
+		dataBase[index53].dataVar.append("text")
+			.attr("x", width + 145)
+			.attr("y", 9 + 25 * index53)
+			.attr("dy", ".35em")
+			.style("text-anchor", "end")
+			.text(dataBase[index53].columnline);
+	}
+
+// -------------------------------------------------------------------------------------------------------------
+ 
+
+
+	
+	// Add the X Axis
+	svg.append("g")		
+		.attr("class", "x axis")
+		.attr("transform", "translate(0," + height + ")")
+		.call(xAxis);
+ 
+	// Add the Y Axis
+	svg.append("g")		
+		.attr("class", "y axis")
+		.call(yAxis);
+}
+
+d3.csv("BugStats.csv", drawGraph);
+}
+ 
+</script>
+<script>
+function drawSecondGraph(){
+var dataBase2 = [
+	{
+		valueline:"", 
+		columnline:"Total bugs",
+		dataVar:"",
+		colorcode:"",
+		yFunction54: function(d) {
+			return y(d[this.columnline]);
+		},
+		clickFunction: function(d) {
+			if (singleData2) {
+				singleData2 = false;
+				svg2.selectAll("g").remove();
+				d3.csv("BugSubmissions.csv", drawGraph2);
+			}
+			else {
+				singleData2 = true;
+				for (j = 0; j < dataBase2.length; j++) {
+					if (j != 0) {
+						dataBase2[j].dataVar.remove();
+					}
+				}
+			}
+		},
+		mouseoverFunction: function(d) {
+            div.transition()        
+                .duration(200)      
+                .style("opacity", .9);      
+            div.html(formatTime(d["Date"]) + ttt + 
+            d[dataBase2[0].columnline])  
+                .style("left", (d3.event.pageX) + "px")     
+                .style("top", (d3.event.pageY - 28) + "px");    
+        },
+	},
+	{
+		valueline:"", 
+		columnline:"P1",
+		dataVar:"",
+		colorcode:"",
+		yFunction54: function(d) {
+			return y(d[this.columnline]);
+		},
+		clickFunction: function(d) {
+			if (singleData2) {
+				singleData2 = false;
+				svg2.selectAll("g").remove();
+				d3.csv("BugSubmissions.csv", drawGraph2);
+			}
+			else {
+				singleData2 = true;
+				for (j = 0; j < dataBase2.length; j++) {
+					if (j != 1) {
+						dataBase2[j].dataVar.remove();
+					}
+				}
+			}
+		},
+		mouseoverFunction: function(d) {      
+            div.transition()        
+                .duration(200)      
+                .style("opacity", .9);      
+            div.html(formatTime(d["Date"]) + ttt + 
+            d[dataBase2[1].columnline])  
+                .style("left", (d3.event.pageX) + "px")     
+                .style("top", (d3.event.pageY - 28) + "px");    
+        }
+	},
+	{
+		valueline:"", 
+		columnline:"P2",
+		dataVar:"",
+		colorcode:"",
+		yFunction54: function(d) {
+			return y(d[this.columnline]);
+		},
+		clickFunction: function(d) {
+			if (singleData2) {
+				singleData2 = false;
+				svg2.selectAll("g").remove();
+				d3.csv("BugSubmissions.csv", drawGraph2);
+			}
+			else {
+				singleData2 = true;
+				for (j = 0; j < dataBase2.length; j++) {
+					if (j != 2) {
+						dataBase2[j].dataVar.remove();
+					}
+				}
+			}
+		},
+		mouseoverFunction: function(d) {      
+            div.transition()        
+                .duration(200)      
+                .style("opacity", .9);      
+            div.html(formatTime(d["Date"]) + ttt + 
+            d[dataBase2[2].columnline])  
+                .style("left", (d3.event.pageX) + "px")     
+                .style("top", (d3.event.pageY - 28) + "px");    
+        }
+	},
+	{
+		valueline:"", 
+		columnline:"P3",
+		dataVar:"",
+		colorcode:"",
+		yFunction54: function(d) {
+			return y(d[this.columnline]);
+		},
+		clickFunction: function(d) {
+			if (singleData2) {
+				singleData2 = false;
+				svg2.selectAll("g").remove();
+				d3.csv("BugSubmissions.csv", drawGraph2);
+			}
+			else {
+				singleData2 = true;
+				for (j = 0; j < dataBase2.length; j++) {
+					if (j != 3) {
+						dataBase2[j].dataVar.remove();
+					}
+				}
+			}
+		},
+		mouseoverFunction: function(d) {      
+            div.transition()        
+                .duration(200)      
+                .style("opacity", .9);      
+            div.html(formatTime(d["Date"]) + ttt + 
+            d[dataBase2[3].columnline])  
+                .style("left", (d3.event.pageX) + "px")     
+                .style("top", (d3.event.pageY - 28) + "px");    
+        }
+	},
+	{
+		valueline:"", 
+		columnline:"P4",
+		dataVar:"",
+		colorcode:"",
+		yFunction54: function(d) {
+			return y(d[this.columnline]);
+		},
+		clickFunction: function(d) {
+			if (singleData2) {
+				singleData2 = false;
+				svg2.selectAll("g").remove();
+				d3.csv("BugSubmissions.csv", drawGraph2);
+			}
+			else {
+				singleData2 = true;
+				for (j = 0; j < dataBase2.length; j++) {
+					if (j != 4) {
+						dataBase2[j].dataVar.remove();
+					}
+				}
+			}
+		},
+		mouseoverFunction: function(d) {      
+            div.transition()        
+                .duration(200)      
+                .style("opacity", .9);      
+            div.html(formatTime(d["Date"]) + ttt + 
+            d[dataBase2[4].columnline])  
+                .style("left", (d3.event.pageX) + "px")     
+                .style("top", (d3.event.pageY - 28) + "px");    
+        }
+	},
+	{
+		valueline:"", 
+		columnline:"P5",
+		dataVar:"",
+		colorcode:"",
+		yFunction54: function(d) {
+			return y(d[this.columnline]);
+		},
+		clickFunction: function(d) {
+			if (singleData2) {
+				singleData2 = false;
+				svg2.selectAll("g").remove();
+				d3.csv("BugSubmissions.csv", drawGraph2);
+			}
+			else {
+				singleData2 = true;
+				for (j = 0; j < dataBase2.length; j++) {
+					if (j != 5) {
+						dataBase2[j].dataVar.remove();
+					}
+				}
+			}
+		},
+		mouseoverFunction: function(d) {      
+            div.transition()        
+                .duration(200)      
+                .style("opacity", .9);      
+            div.html(formatTime(d["Date"]) + ttt + 
+            d[dataBase2[5].columnline])  
+                .style("left", (d3.event.pageX) + "px")     
+                .style("top", (d3.event.pageY - 28) + "px");    
+        }
+	},
+];
+
+if (dataBase2.length > 10) {
+	colorcodes2 = d3.scale.category20();
+	numberofcolors2 = 20;
+}
+else {
+	colorcodes2 = d3.scale.category10();
+	numberofcolors2 = 10;
+}
+for (var index56 = 0; index56 < dataBase2.length; index56++) {
+	dataBase2[index56].colorcode = colorcodes2(index56%numberofcolors2);
+}
+
+ 
+// Define the line
+for (var index54 = 0; index54 < dataBase2.length; index54++) {
+	dataBase2[index54].valueline = d3.svg.line()
+		.x(function(d) { return x(d["Date"]); })
+		.y(dataBase2[index54].yFunction54);
+}
+    
+// Adds the svg canvas
+var	svg2 = d3.select("body")
+	.append("svg")
+		.attr("width", width + margin.left + margin.right + 170)
+		.attr("height", height + margin.top + margin.bottom)
+	.append("g")
+		.attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+
+var div = d3.select("body").append("div")   
+    .attr("class", "tooltip")               
+    .style("opacity", 0);
+ 
+var singleData2 = false;
+
+// Get the data
+drawGraph2 = function(error, data) {
+	data.forEach(function(d) {
+		d["Date"] = parseDate(d["Date"]);
+		for (i = 0; i < dataBase2.length; i++) {
+			d[dataBase2[i].columnline] = 
+				+d[dataBase2[i].columnline];
+		}
+	});
+ 
+	// Scale the range of the data
+	x.domain(d3.extent(data, function(d) { return d["Date"]; }));
+	y.domain([0, d3.max(data, function(d) {
+		var maxim = d[dataBase2[0].columnline];
+		for (var i = 1; i < dataBase2.length; i++) {
+			if (d[dataBase2[i].columnline] > maxim) {
+				maxim = d[dataBase2[i].columnline];
+			}
+		}
+		return maxim; 
+	})]);
+	var dataVars = ["","","","","","","",""];
+// ------------------------------------------------------------------------------------------------------
+	for (var index53 = 0; index53 < dataBase2.length; index53++) {
+		dataBase2[index53].dataVar = svg2.append("g")
+			.attr("id", ("data " + (1 + index53)));
+
+		dataBase2[index53].dataVar.append("path")      // Add the valueline4 path.
+			.attr("class", "line")
+			.style("stroke", dataBase2[index53].colorcode)
+			.attr("d", dataBase2[index53].valueline(data));
+
+		dataBase2[index53].dataVar.selectAll("dot")
+			.data(data)
+		.enter().append("circle")
+			.attr("r", 4.0)
+			.style("fill", dataBase2[index53].colorcode)
+			.attr("cx", function(d) { return x(d["Date"]); })
+			.attr("cy", function(d) { 
+				return y(d[dataBase2[index53].columnline]); 
+			})
+			.on("mouseover", dataBase2[index53].mouseoverFunction)                  
+			.on("mouseout", function(d) {       
+				div.transition()        
+					.duration(500)      
+					.style("opacity", 0);   
+			});
+
+		dataBase2[index53].dataVar.append("rect")
+			.attr("x", width + 150)
+			.attr("y", 25 * index53)
+			.attr("width", 18)
+			.attr("height", 18)
+			.style("fill", dataBase2[index53].colorcode)
+			.on("click", dataBase2[index53].clickFunction);
+
+		dataBase2[index53].dataVar.append("text")
+			.attr("x", width + 145)
+			.attr("y", 9 + 25 * index53)
+			.attr("dy", ".35em")
+			.style("text-anchor", "end")
+			.text(dataBase2[index53].columnline);
+	}
+
+// -------------------------------------------------------------------------------------------------------------
+ 
+
+
+	
+	// Add the X Axis
+	svg2.append("g")		
+		.attr("class", "x axis")
+		.attr("transform", "translate(0," + height + ")")
+		.call(xAxis);
+ 
+	// Add the Y Axis
+	svg2.append("g")		
+		.attr("class", "y axis")
+		.call(yAxis);
+}
+
+d3.csv("BugSubmissions.csv", drawGraph2);
+}
+</script>
+<script>
+drawFirstGraph();
+function showGraph1() {
+	d3.selectAll("p").remove();
+	d3.selectAll("svg").remove();
+	var dottedLine = d3.select("body").append("p")
+		.text("-------------------------------"
+			+ "-------------------------------"
+			+ "-------------------------------"
+			+ "-------------------------------");
+	drawFirstGraph();
+	var dottedLine = d3.select("body").append("p")
+		.text("-------------------------------"
+			+ "-------------------------------"
+			+ "-------------------------------"
+			+ "-------------------------------");
+}
+function showGraph2() {
+	d3.selectAll("p").remove();
+	d3.selectAll("svg").remove();
+	var dottedLine = d3.select("body").append("p")
+		.text("-------------------------------"
+			+ "-------------------------------"
+			+ "-------------------------------"
+			+ "-------------------------------");
+	drawSecondGraph();
+	var dottedLine = d3.select("body").append("p")
+		.text("-------------------------------"
+			+ "-------------------------------"
+			+ "-------------------------------"
+			+ "-------------------------------");
+}
+function showBothGraphs() {
+	d3.selectAll("p").remove();
+	d3.selectAll("svg").remove();
+	var dottedLine = d3.select("body").append("p")
+		.text("-------------------------------"
+			+ "-------------------------------"
+			+ "-------------------------------"
+			+ "-------------------------------");
+	drawFirstGraph();
+	var dottedLine2 = d3.select("body").append("p")
+		.text("-------------------------------"
+			+ "-------------------------------"
+			+ "-------------------------------"
+			+ "-------------------------------");
+	drawSecondGraph();
+	var dottedLine = d3.select("body").append("p")
+		.text("-------------------------------"
+			+ "-------------------------------"
+			+ "-------------------------------"
+			+ "-------------------------------");
+}
+
+</script>
+<p>----------------------------------------------------------------------------------------------------------------------------</p>
+
+</body>
+</html>

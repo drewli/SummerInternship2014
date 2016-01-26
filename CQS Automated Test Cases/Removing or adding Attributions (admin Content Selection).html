@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head profile="http://selenium-ide.openqa.org/profiles/test-case">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link rel="selenium.base" href="http://qa-cqs-11/" />
+<title>New Test</title>
+</head>
+<body>
+<table cellpadding="1" cellspacing="1" border="1">
+<thead>
+<tr><td rowspan="1" colspan="3">New Test</td></tr>
+</thead><tbody>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>css=div[key=&quot;/common/channel/content_list.aspx&quot;]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=div[key=&quot;/common/channel/content_list.aspx&quot;]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>//div[@id='list']/div/div[3]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>doubleClick</td>
+	<td>//div[@id='list']/div/div[3]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>//div[@id='list']/div/div[4]/div[2]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>doubleClick</td>
+	<td>//div[@id='list']/div/div[4]/div[2]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=edit_btn</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForPopUp</td>
+	<td></td>
+	<td>30000</td>
+</tr>
+<tr>
+	<td>selectPopUp</td>
+	<td></td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=main_box_tab2</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=main_box_tab2</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>//div[@id='main_box_attribution_list_list_body']/div</td>
+	<td></td>
+</tr>
+<tr>
+	<td>chooseElementToClickConditionally</td>
+	<td>//div[@id='main_box_attribution_list_list_body']/div/div</td>
+	<td>id=main_box_attribution_list_edit_button | id=main_box_attribution_list_add_button</td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>//iframe</td>
+	<td></td>
+</tr>
+<tr>
+	<td>selectFrame</td>
+	<td>//iframe</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>css=input[type=&quot;checkbox&quot;]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=input[type=&quot;checkbox&quot;]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=save_button</td>
+	<td></td>
+</tr>
+<tr>
+	<td>selectPopUp</td>
+	<td></td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementNotPresent</td>
+	<td>//iframe</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=save_button</td>
+	<td></td>
+</tr>
+<tr>
+	<td>selectWindow</td>
+	<td>null</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickThenErrorIfConfirmationPresent</td>
+	<td>link=Logout</td>
+	<td>Attributions could not be added or could not be removed.</td>
+</tr>
+</tbody></table>
+</body>
+</html>

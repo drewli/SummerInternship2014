@@ -1,0 +1,233 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head profile="http://selenium-ide.openqa.org/profiles/test-case">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link rel="selenium.base" href="http://qa-cqs-11/" />
+<title>New Test</title>
+</head>
+<body>
+<table cellpadding="1" cellspacing="1" border="1">
+<thead>
+<tr><td rowspan="1" colspan="3">New Test</td></tr>
+</thead><tbody>
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head profile="http://selenium-ide.openqa.org/profiles/test-case">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link rel="selenium.base" href="http://qa-cqs-11/" />
+<title>Creating a provider without first name</title>
+</head>
+<body>
+<table cellpadding="1" cellspacing="1" border="1">
+<thead>
+<tr><td rowspan="1" colspan="3">Creating a provider without first name</td></tr>
+</thead><tbody>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>//div[@id='header_setup_menu']/div[3]/div[5]/span[2]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>//div[@id='header_setup_menu']/div[3]/div[5]/span[2]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>css=span:contains(&quot;e-Prescribing&quot;)</td>
+	<td></td>
+</tr>
+<tr>
+	<td>doubleClick</td>
+	<td>css=span:contains(&quot;e-Prescribing&quot;)</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForPopUp</td>
+	<td></td>
+	<td>30000</td>
+</tr>
+<tr>
+	<td>selectPopUp</td>
+	<td></td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=main_box_provider_list_add_button</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=main_box_provider_list_add_button</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>css=span:contains(&quot;Test, Provider&quot;)</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=span:contains(&quot;Test, Provider&quot;)</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>//div[@class='line selected']/span/input</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>//html/body/div[4]/button</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementNotPresent</td>
+	<td>//iframe</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=button:contains(&quot;OK&quot;)</td>
+	<td></td>
+</tr>
+<tr>
+	<td>selectWindow</td>
+	<td>null</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>css=span:contains(&quot;e-Prescribing&quot;)</td>
+	<td></td>
+</tr>
+<tr>
+	<td>doubleClick</td>
+	<td>css=span:contains(&quot;e-Prescribing&quot;)</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForPopUp</td>
+	<td></td>
+	<td>30000</td>
+</tr>
+<tr>
+	<td>selectPopUp</td>
+	<td></td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>css=span:contains(&quot;Test, Provider&quot;)</td>
+	<td></td>
+</tr>
+<tr>
+	<td>errorIfElementNotPresent</td>
+	<td>css=span:contains(&quot;Test, Provider&quot;)</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=main_box_provider_list_edit_button</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=span:contains(&quot;Test, Provider&quot;)</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=filter</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=filter</td>
+	<td>Test, Provider</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=search_btn</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>//div[@id='list_list_body']/div/div/span/input</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>//div[@id='list_list_body']/div/div/span/input</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>//body/div[4]/button</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementNotPresent</td>
+	<td>//iframe</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=button:contains(&quot;OK&quot;)</td>
+	<td></td>
+</tr>
+<tr>
+	<td>selectWindow</td>
+	<td>null</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>css=span:contains(&quot;e-Prescribing&quot;)</td>
+	<td></td>
+</tr>
+<tr>
+	<td>doubleClick</td>
+	<td>css=span:contains(&quot;e-Prescribing&quot;)</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForPopUp</td>
+	<td></td>
+	<td>30000</td>
+</tr>
+<tr>
+	<td>selectPopUp</td>
+	<td></td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=main_box_provider_list</td>
+	<td></td>
+</tr>
+<tr>
+	<td>errorIfElementPresent</td>
+	<td>css=span:contains(&quot;Test, Provider&quot;)</td>
+	<td></td>
+</tr>
+<tr>
+	<td>close</td>
+	<td></td>
+	<td></td>
+</tr>
+<tr>
+	<td>selectWindow</td>
+	<td>null</td>
+	<td></td>
+</tr>
+</tbody></table>
+</body>
+</html>
+
+</tbody></table>
+</body>
+</html>
